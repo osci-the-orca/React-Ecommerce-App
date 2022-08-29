@@ -10,7 +10,7 @@ const Container = styled.div`
   height: 100vh;
   background-color: white;
   position: relative;
-  /* overflow: hidden; */
+  overflow: hidden;
 `;
 
 const Arrow = styled.div<{ direction: string }>`
@@ -35,6 +35,7 @@ const Arrow = styled.div<{ direction: string }>`
 const Wrapper = styled.div<{ slideIndex: number }>`
   display: flex;
   height: 100px;
+  transition: all 1s;
   transform: translateX(${(props) => props.slideIndex * -100}vw);
 `;
 
