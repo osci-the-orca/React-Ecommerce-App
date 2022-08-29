@@ -5,14 +5,14 @@ import { Badge } from "@mui/material";
 import styled from "styled-components";
 
 const Container = styled.div`
-  height: 60px;
+  height: 4rem;
 `;
 
 const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
+  padding: 10px 10px;
 `;
 
 // LEFT IN NAV BAR
@@ -58,7 +58,7 @@ const Right = styled.div`
 const MenuItem = styled.div`
   font-size: 14;
   cursor: pointer;
-  margin: 2rem;
+  margin: 0 2rem;
 `;
 
 const Navbar = () => {
