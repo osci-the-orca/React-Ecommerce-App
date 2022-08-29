@@ -1,7 +1,8 @@
 import ArrowLeftIcon from "@mui/icons-material/ArrowLeft";
 import ArrowRightIcon from "@mui/icons-material/ArrowRight";
+import { useState } from "react";
 import styled from "styled-components";
-// import {} from "styled-components/cssprop";
+import { SliderItems } from "../pages/data";
 
 const Container = styled.div`
   display: flex;
@@ -31,10 +32,10 @@ const Arrow = styled.div<{ direction: string }>`
   z-index: 10;
 `;
 
-const Wrapper = styled.div`
+const Wrapper = styled.div<{ slideIndex: number }>`
   display: flex;
   height: 100px;
-  transform: translateX(0vw);
+  transform: translateX(${(props) => props.slideIndex * -100}vw);
 `;
 
 const Slide = styled.div<{ background: string }>`
@@ -77,36 +78,34 @@ const Button = styled.button`
 const Slider = () => {
   const [slideIndex, setSlideIndex] = useState(0);
 
-  // const handleClick = (direction) => {};
+  const handleClick = (direction: string) => {
+    if (direction === "left") {
+      setSlideIndex(slideIndex > 0 ? slideIndex - 1 : 2);
+    } else {
+      setSlideIndex(slideIndex < 2 ? slideIndex + 1 : 0);
+    }
+  };
 
   return (
     <Container>
-      <Arrow direction="left">
+      <Arrow direction="left" onClick={() => handleClick("left")}>
         <ArrowLeftIcon />
       </Arrow>
-      <Wrapper>
-        <Slide background="#ff7f50">
-          <ImgContainer>
-            <Image src="https://images.unsplash.com/photo-1511556820780-d912e42b4980?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80" />
-          </ImgContainer>
-          <InfoContainer>
-            <Title>Summer sale</Title>
-            <Description>Buy shit you dont really need, but you will look cool! why not?</Description>
-            <Button>ENTER</Button>
-          </InfoContainer>
-        </Slide>
-        <Slide background="#add8e6">
-          <ImgContainer>
-            <Image src="https://images.unsplash.com/photo-1603252109303-2751441dd157?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80" />
-          </ImgContainer>
-          <InfoContainer>
-            <Title>Summer sale</Title>
-            <Description>Buy shit you dont really need, but you will look cool! why not?</Description>
-            <Button>ENTER</Button>
-          </InfoContainer>
-        </Slide>
+      <Wrapper slideIndex={slideIndex}>
+        {SliderItems.map((item) => (
+          <Slide background={item.background}>
+            <ImgContainer>
+              <Image src={item.img} />
+            </ImgContainer>
+            <InfoContainer>
+              <Title>{item.title}</Title>
+              <Description>{item.description}</Description>
+              <Button>ENTER STORE</Button>
+            </InfoContainer>
+          </Slide>
+        ))}
       </Wrapper>
-      <Arrow direction="right">
+      <Arrow direction="right" onClick={() => handleClick("right")}>
         <ArrowRightIcon />
       </Arrow>
     </Container>
