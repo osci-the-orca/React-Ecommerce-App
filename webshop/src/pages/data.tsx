@@ -21,3 +21,27 @@ export const SliderItems = [
     background: "#b656c6",
   },
 ];
+
+export interface Category {
+  id: number;
+  img: string;
+  title: string;
+}
+
+export const categories: Category[] = [
+  {
+    id: 1,
+    img: "https://images.unsplash.com/photo-1633966887768-64f9a867bdba?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2003&q=80",
+    title: "SHIRT",
+  },
+  {
+    id: 2,
+    img: "https://images.unsplash.com/photo-1600185365926-3a2ce3cdb9eb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1025&q=80",
+    title: "SHOE",
+  },
+  {
+    id: 3,
+    img: "https://images.unsplash.com/photo-1551028719-00167b16eac5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80",
+    title: "JACKET",
+  },
+];
