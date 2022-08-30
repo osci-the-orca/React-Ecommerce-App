@@ -1,75 +1,19 @@
 import { Facebook, Instagram, MailOutline, Phone, Pinterest, Room, Twitter } from "@mui/icons-material/";
-import styled from "styled-components";
-
-const Container = styled.div`
-  display: flex;
-`;
-
-const Left = styled.div`
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-`;
-
-const Logo = styled.h1``;
-
-const Desc = styled.p`
-  margin: 20px 0px;
-`;
-
-const SocialContainer = styled.div`
-  display: flex;
-`;
-
-const SocialIcon = styled.div`
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  color: white;
-  background-color: #${(props) => props.color};
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 20px;
-`;
-
-const Center = styled.div`
-  flex: 1;
-  padding: 20px;
-`;
-
-const Title = styled.h3`
-  margin-bottom: 30px;
-`;
-
-const List = styled.ul`
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-`;
-
-const ListItem = styled.li`
-  width: 50%;
-  margin-bottom: 10px;
-`;
-
-const Right = styled.div`
-  flex: 1;
-  padding: 20px;
-`;
-
-const ContactItem = styled.div`
-  margin-bottom: 20px;
-  display: flex;
-  align-items: center;
-`;
-
-const Payment = styled.img`
-  width: 50%;
-`;
+import {
+  Center,
+  ContactItem,
+  Container,
+  Desc,
+  Left,
+  List,
+  ListItem,
+  Logo,
+  Payment,
+  Right,
+  SocialContainer,
+  SocialIcon,
+  Title,
+} from "../components/Footer.style";
 
 const Footer = () => {
   return (
@@ -77,8 +21,9 @@ const Footer = () => {
       <Left>
         <Logo>.webSHOP</Logo>
         <Desc>
-          There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour,
-          or randomised words which don’t look even slightly believable.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, quam, in itaque ipsam illo officia laudantium aliquid placeat assumenda
+          magnam temporibus architecto iure ipsa beatae voluptatem, consequuntur accusantium quidem! Minus! Consequatur doloremque laudantium
+          exercitationem. Nam necessitatibus tempore voluptas adipisci sed quod error minima blanditiis similique, dignissimos nulla autem. Harum eius
         </Desc>
         <SocialContainer>
           <SocialIcon color="3B5999">
